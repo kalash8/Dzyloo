@@ -1,0 +1,33 @@
+<div class="container mt-5">
+
+    <div *ngIf="errormsg" class="alert alert-warning mt-5 alert-dismissible fade show" role="alert">
+        <strong>{{errormsg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div *ngIf="successmsg" class="alert alert-success mt-5 alert-dismissible fade show" role="alert">
+        <strong>{{successmsg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+    
+    <form [formGroup]="expenseForm" (ngSubmit)="expenseSubmit()">
+        <div class="container row g-3" > 
+        <div class="col-lg-4 mb-3 mt-2">
+            <input type="text" class="form-control" formControlName="item_name" placeholder="Enter Item Name">
+        </div>
+        
+        <div class="col-lg-4 mb-3 mt-2">
+            <input type="date" class="form-control" formControlName="date" placeholder="Enter Date">
+        </div>
+        
+        <div class="col-lg-4 mb-3 mt-2">
+            <input type="text" class="form-control" formControlName="amount" placeholder="Enter Total Expended">
+        </div>
+        
+        <div class="col-lg-4 mb-3 mt-2">
+            <button class="btn btn-primary btn-sm">Add Expense</button>
+        </div>
+    </div>
+    </form>
+</div>
